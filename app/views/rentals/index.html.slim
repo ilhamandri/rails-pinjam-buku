@@ -1,0 +1,29 @@
+h1 Welcome To Rental
+
+| What you wanna do ?
+
+br
+br
+
+table
+  thead
+    tr
+      th = button_to 'Rent a Book', new_rental_path, method: 'get'
+      th = button_to 'See All User', users_path, method: 'get'
+      th = button_to 'Book Collection', books_path, method: 'get'
+      th = button_to 'See Author', authors_path, method: 'get'
+
+h1 Rent Report
+
+table
+  thead
+    tr
+      th User Name
+      th Book Title
+      th Day
+  tbody
+    - @rentals.each do |rent|
+      tr
+        td #{rent.user.name}
+        td #{rent.book.title}
+        td #{rent.day} days

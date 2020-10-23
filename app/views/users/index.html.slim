@@ -1,0 +1,37 @@
+h1 Listing Users
+
+div style=""
+	= flash[:notice]
+
+br
+br
+
+table
+	thead
+		tr
+			th Nama
+			th Address
+			th Handphone
+			th Username
+			th Password
+
+	tbody
+		- @users.each do |user|
+			tr
+				td = user.name
+				td = user.address
+				td = user.handphone
+				td = user.username
+				td = user.password
+				td = button_to "edit", edit_user_path(user), method: :get
+				td = button_to "show", user_path(user), method: :get
+				td = button_to "delete", user_path(user), method: :delete, data: {confirm: "are u sure?"}
+				td = button_to 'see book', book_list_path, params: {user_id: user.id}, method: :get
+br
+table
+	thead
+		tr
+			th = link_to "Create User", new_user_path
+			th = link_to "See Books", books_path
+			th = link_to "See Authors", authors_path
+

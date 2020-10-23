@@ -1,0 +1,21 @@
+= form_with model: @book, local: true do |form|
+  = form.label :title
+  br
+  = form.text_field :title
+
+  br
+
+  = form.label :total_page
+  br
+  = form.text_field :total_page
+
+  br
+  br
+
+  = form.select :author_id, Author.select(:id, :name).map{ |author| [author.name, author.id] }, {prompt: 'Select Author'}
+
+  br
+  br
+
+  = form.submit
+  br

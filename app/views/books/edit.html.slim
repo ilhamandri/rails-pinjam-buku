@@ -1,0 +1,8 @@
+h1
+  | Edit #{@book.title}
+
+= render 'form'
+
+br
+
+= button_to 'Back', books_path, method: :get

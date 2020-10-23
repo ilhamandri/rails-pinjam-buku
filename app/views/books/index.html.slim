@@ -1,0 +1,26 @@
+h1 Books Listing
+
+table
+  thead
+    tr
+      th Title
+      th Total Page
+      th Author
+  tbody
+    - @books.each do |book|
+      tr
+        td = book.title
+        td = book.total_page
+        / td = @author
+        td = button_to 'edit', edit_book_path(book), method: :get
+        td = button_to 'show', book_path(book), method: :get
+        td = button_to 'delete', book_path(book), method: :delete, data: {confirm: "sure?"}
+        td = button_to 'see user', user_list_path, method: :get
+br
+br
+
+table
+  thead
+    tr
+      th = button_to 'Create Book', new_book_path, method: :get
+      th = button_to 'Back', users_path, method: :get

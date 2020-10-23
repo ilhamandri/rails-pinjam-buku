@@ -1,0 +1,19 @@
+p
+	| Nama : 
+	= @user.name
+p 
+	| Address : 
+	= @user.address
+p 
+	| Handphone : 
+	= @user.handphone
+p 
+	| Username :  
+	= @user.username
+p 
+	| Password : 
+	= @user.password
+
+= link_to 'back', users_path
+br
+= link_to 'edit', edit_user_path

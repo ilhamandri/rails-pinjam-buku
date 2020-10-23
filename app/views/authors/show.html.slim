@@ -1,0 +1,22 @@
+h1 Author Details
+
+| Name : #{@author.name}
+
+br
+br
+
+| Age : #{@author.age}
+
+br
+br
+
+| Address : #{@author.address}
+
+br
+br
+
+table
+  thead
+    tr
+      th = link_to "Edit", edit_author_path
+      th = link_to "Back", authors_path

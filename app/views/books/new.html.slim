@@ -1,0 +1,12 @@
+h1
+  | Buat buku
+
+= render 'form'
+
+br
+
+table
+  thead
+    tr
+      th = button_to 'Add Author', new_author_path, method: :get
+      th = button_to 'Back', books_path, method: :get

@@ -1,0 +1,19 @@
+h1 Please Fill the Form below
+
+= form_with model: @rental, local: true, method: 'post' do |form|
+  = form.select :user_id, User.select(:id,:name).map{|u| [u.name, u.id]}, {prompt: "Choose User"}
+  br
+  br
+
+  = form.select :book_id, Book.select(:id,:title).map{|b| [b.title, b.id]}, {prompt: "Choose Book"}
+  br
+  br
+
+  = form.label :day, "How long?"
+  br
+  = form.number_field :day
+
+  br
+  br
+
+  = form.submit 'Rent Book'
